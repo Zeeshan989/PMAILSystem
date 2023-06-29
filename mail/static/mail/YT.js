@@ -111,6 +111,7 @@ function load_mailbox(mailbox) {
             emailBox.appendChild(recipientsLabel);
             emailBox.appendChild(subjectlabel);
             emailBox.appendChild(timeLabel);
+            emailBox.style.backgroundColor='#B9D3E9';
           } else if ((mailbox === 'inbox') && (read==true) && (archived==false)){
             // Code for 'inbox' mailbox
             emailBox.appendChild(senderLabel);
@@ -130,6 +131,7 @@ function load_mailbox(mailbox) {
             emailBox.appendChild(senderLabel);
             emailBox.appendChild(subjectlabel);
             emailBox.appendChild(timeLabel);
+            emailBox.style.backgroundColor='#B9D3E9';
           }
 
 
@@ -172,8 +174,7 @@ function load_mailbox(mailbox) {
     }
 
     function email_data(id,mailbox) {
-      console.log(mailbox)
-      console.log(id)
+      document.querySelector('#title').style.display = 'none';
       mbox=mailbox
       if(mbox=='inbox'){
       fetch(`/emails/${id}`, {
