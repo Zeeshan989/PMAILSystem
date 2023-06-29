@@ -108,7 +108,7 @@ function load_mailbox(mailbox) {
             emailBox.appendChild(senderLabel);
             emailBox.appendChild(subjectlabel);
             emailBox.appendChild(timeLabel);
-            emailBox.style.backgroundColor='grey';
+            emailBox.style.backgroundColor='#D3D3D3';
           }
           else if ((mailbox === 'inbox') && (read==false) && (archived==false)){
             // Code for 'inbox' mailbox
@@ -220,18 +220,20 @@ function load_mailbox(mailbox) {
         const button = document.createElement('button');
           // Set the button text
           button.textContent = 'Archive';
+          button.style.backgroundColor = 'blue'; // Set the background color to blue
+          button.style.color = 'white'; // Set the text color to white
 
           // Set button attributes, if needed
-          button.setAttribute('id', 'myButton');
+          button.setAttribute('id', 'myButton1');
           button.setAttribute('class', 'myButtonClass');
           document.querySelector('#emails-view').appendChild(button);
 
           const reply = document.createElement('button');
-          // Set the button text
           reply.textContent = 'Reply';
-
+          reply.style.backgroundColor = 'blue'; // Set the background color to blue
+          reply.style.color = 'white'; // Set the text color to white
           // Set button attributes, if needed
-          reply.setAttribute('id', 'myButton');
+          reply.setAttribute('id', 'myButton2');
           reply.setAttribute('class', 'myButtonClass');
           document.querySelector('#emails-view').appendChild(reply);
           reply.addEventListener('click', () => {
@@ -247,7 +249,7 @@ function load_mailbox(mailbox) {
                   archived: true
               })
             })
-            load_mailbox('archive')
+            reload_mailbox('inbox')
           })
           
         };
@@ -255,6 +257,9 @@ function load_mailbox(mailbox) {
             const button = document.createElement('button');
               // Set the button text
               button.textContent = 'Unarchive';
+              button.style.backgroundColor = 'blue'; // Set the background color to blue
+              button.style.color = 'white'; // Set the text color to white
+             
     
               // Set button attributes, if needed
               button.setAttribute('id', 'myButton');
@@ -272,7 +277,7 @@ function load_mailbox(mailbox) {
                 
                   
               })
-              load_mailbox('inbox')
+              reload_mailbox('inbox')
             })
             
                 }
@@ -280,3 +285,8 @@ function load_mailbox(mailbox) {
        )}
 
  
+       function reload_mailbox(mailbox) {
+        setTimeout(() => {
+          load_mailbox(mailbox);
+        }, 100);
+      }

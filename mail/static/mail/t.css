@@ -1,0 +1,11 @@
+textarea {
+    min-height: 400px;
+}
+body {
+    background-image: url('https://files.123freevectors.com/wp-content/original/150418-blue-and-white-diagonal-shiny-lines-background-image.jpg');
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-size: cover; /* Scale the image to cover the entire background */
+    font-size: 20px;
+  }
+
+  
