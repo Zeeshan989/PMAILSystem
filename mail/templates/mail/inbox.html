@@ -4,10 +4,11 @@
 {% block body %}
 <nav class="navbar navbar-dark bg-primary" style="background-color: #e3f2fd; width: auto;">
     <div style="display: flex; align-items: center; justify-content: space-between;">
-        <h2 style="margin: 0;font-family: Adorn;">
-            <i class="bi bi-briefcase" style="margin-right: 10px;"></i>PakMail
-        </h2>
-        <h4 style="margin: 0; margin-left: 10px;font-family: Adorn;">{{ request.user.email }}</h2>
+        <img src="{% static 'mail/env.jpg' %}"  style="height: 30px; margin-right: 10px;">
+            <h2 style="margin: 0; font-family: Adorn;">
+                PakMail
+            </h2>
+        <h4 style="margin: 0; margin-left: 10px;font-family: Adorn;">{{ request.user.email }}</h4>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 6px;">
         <button class="btn btn-danger" id="inbox">Inbox</button>
@@ -21,7 +22,8 @@
 
 
 
-
+    <div id="title">
+    </div>    
     <div id="emails-view">
     </div>
 
@@ -44,5 +46,5 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'mail/albela.js' %}"></script>
+    <script src="{% static 'mail/YT.js' %}"></script>
 {% endblock %}
